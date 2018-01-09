@@ -28,7 +28,6 @@ MIN_FARE = 1
 
   def touch_out(exit_station)
     deduct(MIN_FARE)
-    @journeys << {entry: entry_station, exit: exit_station}
     @entry_station = nil
   end
 

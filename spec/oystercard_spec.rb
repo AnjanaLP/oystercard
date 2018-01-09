@@ -34,13 +34,7 @@ describe Oystercard do
         subject.top_up(Oystercard::MIN_FARE)
         subject.touch_in(entry_station)
       end
-      it 'checks if oystercard is touched in'do
-        expect(subject).to be_in_journey
-      end
-      it 'stores the entry station' do
-        expect(subject.entry_station).to eq entry_station
-      end
-      it 'changes card status to in journey' do
+      it 'updates status to confirm in journey' do
         expect(subject).to be_in_journey
       end
     end
@@ -56,7 +50,7 @@ describe '#touch_out'do
         subject.touch_in(entry_station)
         subject.touch_out(exit_station)
       end
-      it 'checks if oystercard is touched out'do
+      it 'confirms oystercard is touched out'do
         expect(subject).not_to be_in_journey
       end
       it 'stores a completed journey' do
