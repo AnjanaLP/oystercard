@@ -59,11 +59,8 @@ describe '#touch_out'do
       it 'checks if oystercard is touched out'do
         expect(subject).not_to be_in_journey
       end
-      it 'stores an exit station' do
-        expect(subject.exit_station).to eq exit_station
-      end
       it 'stores a completed journey' do
-        expect(subject.journeys).to eq [{ entry: entry_station, exit:exit_station }]
+        expect(subject.journeys).to eq [{ entry: entry_station, exit: exit_station }]
       end
     end
   end
